@@ -14,7 +14,7 @@ app = Flask(__name__)
 def homepage():
     return render_template("index.html")
 
-@app.route("/review" , methods = ['POST' , 'GET'])
+@app.route("/review" , methods = ['P OST' , 'GET'])
 def index():
     if request.method == 'POST':
                 try:
@@ -58,7 +58,7 @@ def index():
                                 img_data.append(mydict)
                                 with open(os.path.join(save_directory, f"{query}_{image_tags.index(image_tag)}.jpg"), "wb") as f:
                                     f.write(image_data)
-                    client = pymongo.MongoClient("mongodb+srv://snshrivas:Snshrivas@cluster0.ln0bt5m.mongodb.net/?retryWrites=true&w=majority")
+                    client = pymongo.MongoClient("mongodb+srv://Dipak_mongo:Dipak12345@cluster0.nfh2qpm.mongodb.net/?appName=Cluster0")
                     db = client['image_scrap']
                     review_col = db['image_scrap_data']
                     review_col.insert_many(img_data)          
